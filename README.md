@@ -1,16 +1,28 @@
-# galotne_f
+# Galotne LV 
 
-A new Flutter project.
+Flutter project.
 
-## Getting Started
+An educational application for practicing the memorization of noun, adjective, and verb endings in the Latvian language. Various levels of hints are available to assist you in learning.
 
-This project is a starting point for a Flutter application.
+## Description
 
-A few resources to get you started if this is your first Flutter project:
+The "Galotnes" application is designed for those who are learning the Latvian language and want to reinforce their knowledge of noun, adjective, and verb endings. With the help of interactive tables and various levels of hints, you can effectively train your memory and quickly memorize the correct endings. The application is suitable for both beginners and those who want to improve their knowledge.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Key Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+*   **Ending Tables:** A clear representation of endings for different parts of speech.
+*   **Unique Endings:** A system that allows you to focus on the most important endings.
+*   **Various Levels of Hints:** The application implements different levels of hints, from light color cues to showing the correct answers.
+*   **Verification:** Check the correctness of memorization.
+*   **Help Buttons:** Buttons that will help you understand the application.
+
+## Technologies
+
+*   Flutter
+*   Dart
+
+## Running the Application
+
+1.  **Clone the repository:**
+
+

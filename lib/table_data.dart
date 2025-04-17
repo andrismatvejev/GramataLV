@@ -14,7 +14,7 @@ class TableData {
           chouse_text: isHeader ? cell : "",
           correct_text: cell,
           isHeader: isHeader,
-          color: isHeader ? Colors.yellow[200] : Colors.grey[200],
+          color: isHeader ? Colors.brown[200] : Colors.grey[200],
           isShows: false,
         ),
       );
@@ -65,26 +65,39 @@ class TableStyles {
 
 
 
+//создание таблицы по массиву строк
 class GalotneTableWidget extends StatelessWidget {
   final TableData table;
   final Function(BuildContext context, int rowIndex, int columnIndex) showDialog;
+  final double rowHeight;
+  final int quarterTurns;
 
-  const GalotneTableWidget({Key? key, required this.table, required this.showDialog})
-      : super(key: key);
+  const GalotneTableWidget({
+    Key? key,
+    required this.table,
+    required this.showDialog,
+    this.rowHeight = 50,
+    this.quarterTurns = 0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // Считаем количество столбцов
+    int columnCount = table.rows.isNotEmpty && table.rows[0].isNotEmpty ? table.rows[0].length : 0;
+    // Создаем Map с динамическими columnWidths
+    Map<int, TableColumnWidth> columnWidths = {};
+    columnWidths[0] = const FractionColumnWidth(0.2); // Первый столбец всегда 0.1
+    if (columnCount > 1) {
+      // Для остальных столбцов считаем ширину
+      double remainingWidth = 0.8;
+      double columnWidth = remainingWidth / (columnCount - 1);
+      for (int i = 1; i < columnCount; i++) {
+        columnWidths[i] = FractionColumnWidth(columnWidth);
+      }
+    }
     return Table(
       border: TableStyles.tableBorder,
-      columnWidths: const <int, TableColumnWidth>{
-        0: FractionColumnWidth(0.1),
-        1: FractionColumnWidth(0.15),
-        2: FractionColumnWidth(0.15),
-        3: FractionColumnWidth(0.15),
-        4: FractionColumnWidth(0.15),
-        5: FractionColumnWidth(0.15),
-        6: FractionColumnWidth(0.15),
-      },
+      columnWidths: columnWidths, // Используем вычисленные ширины
       children: table.rows.map(
             (row) => TableRow(
           children: row.map(
@@ -98,13 +111,20 @@ class GalotneTableWidget extends StatelessWidget {
                 child: Container(
                   color: cell.color,
                   child: SizedBox(
-                    height: 45,
+                    height: rowHeight,
                     child: Center(
-                      child: Text(
-                        cell.chouse_text,
-                        style: cell.isHeader
-                            ? TableStyles.headerTextStyle
-                            : TableStyles.SimpleTextStyle,
+                      child: RotatedBox(
+                        quarterTurns: quarterTurns,
+                        child: Text(
+                          cell.chouse_text,
+                          style: cell.isHeader
+                              ? TableStyles.headerTextStyle
+                              : TextStyle(
+                            color: Colors.black,
+                            fontSize: calculateFontSize(cell.correct_text),
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -119,3 +139,24 @@ class GalotneTableWidget extends StatelessWidget {
 }
 
 
+ double calculateCellHeight(String text) {
+// Возвращаем высоту в зависимости от длины
+if (text.length < 5) {
+return 50.0; // Короткий текст
+} else if (text.length < 10) {
+return 70.0; // Средний текст
+} else {
+return 100.0; // Длинный текст
+}
+}
+
+ double calculateFontSize(String text) {
+// Возвращаем размер шрифта в зависимости от длины
+if (text.length < 6) {
+return 20.0; // Короткий текст
+} else if (text.length < 10) {
+return 14.0; // Средний текст
+} else {
+return 8.0; // Длинный текст
+}
+}
