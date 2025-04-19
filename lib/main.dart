@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as Services;
 import 'TestView.dart';
+import 'SourceView.dart';
+import 'Start.dart';
+import 'Tezaurs.dart';
+import 'ExamplesView.dart';
 import 'table_utils.dart';
 
 
@@ -60,10 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
   List<List<String>> _adviceShort = adviceShort1;
   double _tableRowHeight = 40;//высота строки
   int _tableQuarterTurns = 0; //количество поворотов
+  int _selectedIndex = 0; // Добавляем переменную для отслеживания выбора
+  int _NeStandart = 1;
+  String _selectedTitle = 'Lietvards'; // Добавляем переменную для заголовка
 
 
 //боковое меню обработка
   void _onItemTapped(int index) {
+    _NeStandart=0;
     setState(() {
       switch (index) {
         case 0:
@@ -71,45 +79,73 @@ class _MyHomePageState extends State<MyHomePage> {
           _tableQuarterTurns = 0;
           _correctEndings = correctEndings1;
           _adviceShort = adviceShort1;
+          _selectedTitle = 'Lietvards';
           break;
         case 1:
           _tableRowHeight = 40;
           _tableQuarterTurns = 0;
           _correctEndings = correctEndings2;
           _adviceShort = adviceShort2;
+          _selectedTitle = 'Ipašivards';
           break;
         case 2:
-          _tableRowHeight = 90;
-          _tableQuarterTurns = 9;
+          _tableRowHeight = 40;
+          _tableQuarterTurns = 0;
           _correctEndings = correctEndings3;
           _adviceShort = adviceShort3;
+          _selectedTitle = 'Darbības pagatne';
           break;
         case 3:
-          _tableRowHeight = 90;
-          _tableQuarterTurns = 9;
-          _correctEndings = correctEndings4;
-          _adviceShort = adviceShort4;
+          _selectedTitle = 'Tezaurs';
+          _NeStandart=2;
           break;
-        case 4:
-          _tableRowHeight = 90;
-          _tableQuarterTurns = 9;
-          _correctEndings = correctEndings5;
-          _adviceShort = adviceShort5;
-          break;
+
       }
+    });
+  }
+
+
+  void _onBottomNavItemTapped(int index) {
+    setState(() {
+      _NeStandart=0;
+      _selectedIndex = index;
     });
   }
 
   //новый метод
   Widget _buildBody() {
-    return Center(
-      child: TestView(
-        correctEndings: _correctEndings,
-        adviceShort: _adviceShort,
-        tableRowHeight: _tableRowHeight,
-        tableQuarterTurns: _tableQuarterTurns,
-      ),
-    );
+    if(_NeStandart==0){
+    switch (_selectedIndex) {
+      case 0:
+        return Center(
+          child: TestView(
+            correctEndings: _correctEndings,
+            adviceShort: _adviceShort,
+            tableRowHeight: _tableRowHeight,
+            tableQuarterTurns: _tableQuarterTurns,
+          ),
+        );
+      case 1:
+        return const MaterialsView(); // Показываем MaterialsView
+      case 2:
+        return const ExamplesView(); // Показываем ExamplesView
+      case 3:
+        return const StartView(); // Показываем ExamplesView
+      default:
+        return const StartView();
+
+    }}else{
+      switch (_NeStandart) {
+        case 1:
+          return const StartView(); // Показываем MaterialsView
+        case 2:
+          return const TezaursView(); // Показываем ExamplesView
+        default:
+          return const StartView();
+
+      }
+
+    }
   }
 
   //сам визуал
@@ -123,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Flexible(
-              child: Text(widget.title),
+              child: Text(_selectedTitle),
             ),
             const SizedBox(width: 10), // Отступ между текстом и картинкой
 
@@ -168,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: const Icon(Icons.arrow_left),
-              title: const Text('Darb pag'),
+              title: const Text('Darbības'),
               onTap: () {
                 _onItemTapped(2);
                 // ... логика для перехода на страницу Darb pag
@@ -176,20 +212,11 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.arrow_upward),
-              title: const Text('Darb nak'),
+              leading: const Icon(Icons.arrow_left),
+              title: const Text('Tezaurs'),
               onTap: () {
                 _onItemTapped(3);
-                // ... логика для перехода на страницу Darb nak
-                Navigator.pop(context); // Закрываем Drawer
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.arrow_right),
-              title: const Text('Darb tag'),
-              onTap: () {
-                _onItemTapped(4);
-                // ... логика для перехода на страницу Darb tag
+                // ... логика для перехода на страницу Darb pag
                 Navigator.pop(context); // Закрываем Drawer
               },
             ),
@@ -218,9 +245,9 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Examples',
           ),
         ],
-        //currentIndex: _selectedIndex,
-        //selectedItemColor: Colors.amber[800],
-        //onTap: _onItemTapped,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onBottomNavItemTapped,
       ),
 
     );
