@@ -45,13 +45,13 @@ class TableStyles {
     right: BorderSide(color: Colors.black),
     bottom: BorderSide(color: Colors.black),
     left: BorderSide(color: Colors.black),
-    horizontalInside: BorderSide(color: Colors.black),
+    //horizontalInside: BorderSide(color: Colors.black),
     verticalInside: BorderSide(color: Colors.black),
   );
 
   static const TextStyle headerTextStyle = TextStyle(
     color: Colors.black,
-    fontSize: 18,
+    fontSize: 10,
     fontWeight: FontWeight.bold,
   );
 
@@ -80,13 +80,16 @@ class GalotneTableWidget extends StatelessWidget {
     this.quarterTurns = 0,
   }) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     // Считаем количество столбцов
-    int columnCount = table.rows.isNotEmpty && table.rows[0].isNotEmpty ? table.rows[0].length : 0;
+    int columnCount = table.rows.isNotEmpty && table.rows[0].isNotEmpty ? table
+        .rows[0].length : 0;
     // Создаем Map с динамическими columnWidths
     Map<int, TableColumnWidth> columnWidths = {};
-    columnWidths[0] = const FractionColumnWidth(0.2); // Первый столбец всегда 0.1
+    columnWidths[0] =
+    const FractionColumnWidth(0.2); // Первый столбец всегда 0.1
     if (columnCount > 1) {
       // Для остальных столбцов считаем ширину
       double remainingWidth = 0.8;
@@ -95,49 +98,77 @@ class GalotneTableWidget extends StatelessWidget {
         columnWidths[i] = FractionColumnWidth(columnWidth);
       }
     }
+
+    String? referenceFirstCellValue;
+
     return Table(
-      border: TableStyles.tableBorder,
-      columnWidths: columnWidths, // Используем вычисленные ширины
-      children: table.rows.map(
-            (row) => TableRow(
-          children: row.map(
-                (cell) => TableCell(
-              child: GestureDetector(
-                onTap: () {
-                  int rowIndex = table.rows.indexOf(row);
-                  int columnIndex = row.indexOf(cell);
-                  showDialog(context, rowIndex, columnIndex);
-                },
-                child: Container(
-                  color: cell.color,
-                  child: SizedBox(
-                    height: rowHeight,
-                    child: Center(
-                      child: RotatedBox(
-                        quarterTurns: quarterTurns,
-                        child: Text(
-                          cell.chouse_text,
-                          style: cell.isHeader
-                              ? TableStyles.headerTextStyle
-                              : TextStyle(
-                            color: Colors.black,
-                            fontSize: calculateFontSize(cell.correct_text),
-                            fontWeight: FontWeight.normal,
+      border: const TableBorder(
+        verticalInside: BorderSide(color: Colors.black),
+      ),
+      columnWidths: columnWidths,
+      children: table.rows
+          .asMap()
+          .entries
+          .map((entry) {
+        int rowIndex = entry.key;
+        List<TableCellData> row = entry.value;
+
+        String firstCellValue = row.isNotEmpty ? row[0].chouse_text : "";
+
+        if (rowIndex == 1) {
+          referenceFirstCellValue = firstCellValue;
+        }
+
+        bool thickTopBorder = rowIndex > 1 &&
+            firstCellValue == referenceFirstCellValue;
+
+        Border border = Border(
+          top: BorderSide(color: Colors.black, width: thickTopBorder ? 5 : 1),
+          bottom: const BorderSide(color: Colors.black, width: 1),
+        );
+
+        return TableRow(
+          decoration: BoxDecoration(border: border),
+          children: row.map((cell) =>
+              TableCell(
+                child: GestureDetector(
+                  onTap: () {
+                    int columnIndex = row.indexOf(cell);
+                    showDialog(context, rowIndex, columnIndex);
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: thickTopBorder ? 5 : 1),
+                    color: cell.color,
+                    child: SizedBox(
+                      height: rowIndex==0 ? rowHeight*2 : rowHeight,
+                      child: Center(
+                        child: RotatedBox(
+                          quarterTurns: quarterTurns,
+                          child: Text(
+                            cell.chouse_text,
+                            style: cell.isHeader
+                                ? TextStyle(
+                              color: Colors.black,
+                              fontSize: calculateFontSize(cell.correct_text),
+                              fontWeight: FontWeight.bold,
+                            )
+                                : TextStyle(
+                              color: Colors.black,
+                              fontSize: calculateFontSize(cell.correct_text),
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ),
-          ).toList(),
-        ),
-      ).toList(),
+              )).toList(),
+        );
+      }).toList(),
     );
   }
 }
-
 
  double calculateCellHeight(String text) {
 // Возвращаем высоту в зависимости от длины
@@ -152,11 +183,11 @@ return 100.0; // Длинный текст
 
  double calculateFontSize(String text) {
 // Возвращаем размер шрифта в зависимости от длины
-if (text.length < 6) {
+if (text.length < 5) {
 return 20.0; // Короткий текст
 } else if (text.length < 10) {
-return 14.0; // Средний текст
+return 12.0; // Средний текст
 } else {
-return 8.0; // Длинный текст
+return 10.0; // Длинный текст
 }
 }

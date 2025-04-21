@@ -192,6 +192,12 @@ class _TestViewState extends State<TestView> {
 
         return AlertDialog(
           title: Text(widget.adviceShort[rowIndex][columnIndex]),
+          titleTextStyle: const TextStyle( // Добавляем titleTextStyle
+            fontSize: 16,  // Изменяем размер шрифта
+            fontWeight: FontWeight.bold, // Делаем жирным
+            color: Colors.blue, // Изменяем цвет шрифта
+            fontFamily: 'Roboto', // Изменяем семейство шрифта
+          ),
           content:(rowIndex == 0 && columnIndex == 0)
               ? Column(
             mainAxisSize: MainAxisSize.min,

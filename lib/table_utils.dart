@@ -231,46 +231,56 @@ List<List<String>> correctEndings2 =[
 ];
 
 List<List<String>> adviceShort3 =[
-  ["",      "😔",      "āt ot ēt",       "īt ināt",      "ēt",      "īties inaties",      "o/ē/ā+ ties"],
-  ["es",    "ju",      "ju",              "ju",           "ju",     "jos" ,               "jos"],
-  ["tu",    "ji",       "ji",             "ji",           "ji",     "jies"   ,            "jies"],
-  ["4v",    "ja",       "ja",             "ja",           "ja",     "jās"    ,            "jās"],
-  ["mēs",   "jām",      "jām",            "jām",          "jām",    "jāmies"   ,          "jāmies"],
-  ["jūs",   "jāt",      "jāt",            "jāt",          "jāt",    "jāties"    ,         "jāties"],
+  ["",
+    "1-е спряжение Все слова короткие и оканчиваются на -t.\n"
+        "К первому спряжению также относятся слова в 8-м столбе оканчивающиеся на -ties.\n"
+        "Опасно, часто меняется сам корень слова \nAug-t \nSāk-t \nLie-t",
+    "2-е спряжение -āt -ot -ēt.\nКо второму спряжению также относятся -āties-oties в 7-м столбе , и -ēties в 8-м столбе также есть -ēt исключения в 3-м спряжении и 5-м столбе\nRun-āt \nAudz-ēt \nLab-ōt",
+    "3-е спряжение -īt -ināt.\nК третьему спряжению также относятся исключения на -ēt -ēties в 5-м 8-м столбах  и слова оканчивающиеся на -īties -inaties в 6-м столбе \nLas-īt \nGlud-ināt \nGul-ēt",
+    "3-е спряжение -ēt.\n31 слова исключения:\n"
+        "apprec-ēt	жениться\napstrīd-ēt	оспаривать\napsūdzēt	обвинить\natbildēt	отвечать\ncerēt	надеяться\nčukstēt	шептать\ndzirdēt	слышать\ndraudēt	угрожать\ndrebēt	дрожать\ndrīkstēt	сметь\ngribēt	хотеть\ngulēt	спать\nmācēt	уметь\nmīlēt	любить\nminēt	упоминать\npalīdzēt	помогать\npavēlēt	повелеть\npeldēt	плавать\npiederēt	принадлежать\nredzēt	видеть\nsāpēt	болеть\nsēdēt	сидеть\nskanēt	звучать\nspīdēt	светить\nstāvēt	стоять\nsvinēt	праздновать\ntecēt	течь\nticēt	верить\nturēt	держать\nvajadzēt	нуждаться\nvarēt	мочь",
+    "3-е спряжение возвратные -īties -inaties\nLas-īties \nGlud-inaties",
+    "2-е спряжение возвратные -āties-oties   \nRun-āties\nLab-oties",
+    "1-е спряжение возвратные -ties и \n(2-е 3-е) спряжения возвратные -ēties \nCel-ties 1-е спряжение\nSpel-ēties 2-е спряжение\nGul-ēties 3-е спряжение"],
+  ["es pāgatne",    "Aug-u",      "Run-āju",              "Las-ju",           "apstrīd-ju",     "Las-jos" ,               "Run-jos",               "Cel-jos"],
+  ["tu pāgatne",    "Aug-i",       "Run-āji",             "Las-ji",           "apstrīd-ji",     "Las-jies"   ,            "Run-jies",               "Cel-jies"],
+  ["4v pāgatne",    "Aug-a",       "Run-āja",             "Las-ja",           "apstrīd-ja",     "Las-jās"    ,            "Run-jās",               "Cel-jās"],
+  ["mēs pāgatne",   "Aug-ām",      "Run-ājām",            "Las-jām",          "apstrīd-jām",    "Las-jāmies"   ,          "Run-jāmies",               "Cel-jāmies"],
+  ["jūs pāgatne",   "Aug-āt",      "Run-ājāt",            "Las-jāt",          "apstrīd-jāt",    "Las-jāties"    ,         "Run-jāties",               "Cel-jāties"],
 
-  ["es",    "u",      "ju",              "u",           "u",          "os" ,               "os"],
-  ["tu",    "i",       "ā o ē",          "i",           "i",         "ies"   ,            "ies"],
-  ["4v",    "-",       "ā o ē",          "a",           "-",         "ās"    ,            "as"],
-  ["mēs",   "am",      "jam",            "ām",          "am",        "āmies"   ,          "amies"],
-  ["jūs",   "at",      "jat",            "āt",          "at",        "āties"    ,         "aties"],
+  ["es tagadne",    "Aug-u",      "Run-āju",              "Las-u",           "apstrīd-u",          "Las-os" ,               "Run-jos",               "Cel-os"],
+  ["tu tagadne",    "Aug-i",       "Run-ā o ē",          "Las-i",           "apstrīd-i",         "Las-ies"   ,            "Run-jies",               "Cel-ies"],
+  ["4v tagadne",    "Aug-",       "Run-ā o ē",          "Las-a",           "apstrīd-",         "Las-ās"    ,            "Run-jas",               "Cel-as"],
+  ["mēs tagadne",   "Aug-am",      "Run-ājam",            "Las-ām",          "apstrīd-am",        "Las-āmies"   ,          "Run-jamies",               "Cel-amies"],
+  ["jūs tagadne",   "Aug-at",      "Run-ājat",            "Las-āt",          "apstrīd-at",        "Las-āties"    ,         "Run-jaties",               "Cel-aties"],
 
-  ["es",    "šū",      "šū",              "šū",           "šū",        "jos" ,               "jos"],
-  ["tu",    "si",       "si",             "si",           "si",       "jies"   ,            "jies"],
-  ["4v",    "s",         "s",             "s",             "s",        "jās"    ,            "jās"],
-  ["mēs",   "sim",      "sim",            "sim",          "sim",      "jāmies"   ,          "jāmies"],
-  ["jūs",   "siet it",  "siet it",        "siet it",      "siet it",  "jāties"    ,         "jāties"],
+  ["es nākotne",    "Aug-šū",      "Run-āšū",              "Las-šū",           "apstrīd-šū",        "Las-jos" ,               "Run-jos",               "Cel-jos"],
+  ["tu nākotne",    "Aug-si",       "Run-āsi",             "Las-si",           "apstrīd-si",       "Las-jies"   ,            "Run-jies",               "Cel-jies"],
+  ["4v nākotne",    "Aug-s",         "Run-ās",             "Las-s",             "apstrīd-s",        "Las-jās"    ,            "Run-jās",               "Cel-jās"],
+  ["mēs nākotne",   "Aug-sim",      "Run-āsim",            "Las-sim",          "apstrīd-sim",      "Las-jāmies"   ,          "Run-jāmies",               "Cel-jāmies"],
+  ["jūs nākotne","Aug-siet\nAug-it","Run-āsiet\nRun-āit","Las-siet\nLas-it","apstrīd-siet\napstrīd-it","Las-jāties",         "Run-jāties",               "Cel-jāties"],
 ];
 
 
 
 List<List<String>> correctEndings3 =[
-  ["",      "😔",      "āt ot ēt",       "īt ināt",      "ēt",      "īties inaties",      "o/ē/ā+ ties"],
-  ["es",    "ju",      "ju",              "ju",           "ju",     "jos" ,               "jos"],
-  ["tu",    "ji",       "ji",             "ji",           "ji",     "jies"   ,            "jies"],
-  ["4v",    "ja",       "ja",             "ja",           "ja",     "jās"    ,            "jās"],
-  ["mēs",   "jām",      "jām",            "jām",          "jām",    "jāmies"   ,          "jāmies"],
-  ["jūs",   "jāt",      "jāt",            "jāt",          "jāt",    "jāties"    ,         "jāties"],
+  ["",      "-t",      "-āt\n-ot\n-ēt",       "-īt\n-ināt",      "-ēt",      "-īties\n-inaties",      "-āties\n-oties",      "-ties\n-ēties"],
+  ["es",    "u",      "ju",              "ju",           "ju",     "jos" ,               "jos",               "jos"],
+  ["tu",    "i",       "ji",             "ji",           "ji",     "jies"   ,            "jies",               "jies"],
+  ["4v",    "a",       "ja",             "ja",           "ja",     "jās"    ,            "jās",               "jās"],
+  ["mēs",   "ām",      "jām",            "jām",          "jām",    "jāmies"   ,          "jāmies",               "jāmies"],
+  ["jūs",   "āt",      "jāt",            "jāt",          "jāt",    "jāties"    ,         "jāties",               "jāties"],
 
-  ["es",    "u",      "ju",              "u",           "u",          "os" ,               "os"],
-  ["tu",    "i",       "ā o ē",          "i",           "i",         "ies"   ,            "ies"],
-  ["4v",    "-",       "ā o ē",          "a",           "-",         "ās"    ,            "as"],
-  ["mēs",   "am",      "jam",            "ām",          "am",        "āmies"   ,          "amies"],
-  ["jūs",   "at",      "jat",            "āt",          "at",        "āties"    ,         "aties"],
+  ["es",    "u",      "ju",              "u",           "u",          "os" ,               "jos",               "os"],
+  ["tu",    "i",       "ā o ē",          "i",           "i",         "ies"   ,            "jies",               "ies"],
+  ["4v",    "-",       "ā o ē",          "a",           "-",         "ās"    ,            "jas",               "as"],
+  ["mēs",   "am",      "jam",            "ām",          "am",        "āmies"   ,          "jamies",               "amies"],
+  ["jūs",   "at",      "jat",            "āt",          "at",        "āties"    ,         "jaties",               "aties"],
 
-  ["es",    "šū",      "šū",              "šū",           "šū",        "jos" ,               "jos"],
-  ["tu",    "si",       "si",             "si",           "si",       "jies"   ,            "jies"],
-  ["4v",    "s",         "s",             "s",             "s",        "jās"    ,            "jās"],
-  ["mēs",   "sim",      "sim",            "sim",          "sim",      "jāmies"   ,          "jāmies"],
-  ["jūs",   "siet it",  "siet it",        "siet it",      "siet it",  "jāties"    ,         "jāties"],
+  ["es",    "šū",      "šū",              "šū",           "šū",        "jos" ,               "jos",               "jos"],
+  ["tu",    "si",       "si",             "si",           "si",       "jies"   ,            "jies",               "jies"],
+  ["4v",    "s",         "s",             "s",             "s",        "jās"    ,            "jās",               "jās"],
+  ["mēs",   "sim",      "sim",            "sim",          "sim",      "jāmies"   ,          "jāmies",               "jāmies"],
+  ["jūs",   "siet it",  "siet it",        "siet it",      "siet it",  "jāties"    ,         "jāties",               "jāties"],
 ];
 
