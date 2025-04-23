@@ -95,6 +95,20 @@ class _MyHomePageState extends State<MyHomePage> {
           _adviceShort = adviceShort3;
           _selectedTitle = 'Darbības pagatne';
           break;
+        case 4:
+          _tableRowHeight = 40;
+          _tableQuarterTurns = 0;
+          _correctEndings = correctEndings4;
+          _adviceShort = adviceShort4;
+          _selectedTitle = 'Vietniekvārds';
+          break;
+        case 5:
+          _tableRowHeight = 40;
+          _tableQuarterTurns = 0;
+          _correctEndings = correctEndings5;
+          _adviceShort = adviceShort5;
+          _selectedTitle = 'Vietniekvārds 2';
+          break;
         case 3:
           _selectedTitle = 'Tezaurs';
           _NeStandart=2;
@@ -207,6 +221,24 @@ class _MyHomePageState extends State<MyHomePage> {
               title: const Text('Darbības'),
               onTap: () {
                 _onItemTapped(2);
+                // ... логика для перехода на страницу Darb pag
+                Navigator.pop(context); // Закрываем Drawer
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.arrow_left),
+              title: const Text('Vietniekvārds'),
+              onTap: () {
+                _onItemTapped(4);
+                // ... логика для перехода на страницу Darb pag
+                Navigator.pop(context); // Закрываем Drawer
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.arrow_left),
+              title: const Text('Vietniekvārds 2'),
+              onTap: () {
+                _onItemTapped(5);
                 // ... логика для перехода на страницу Darb pag
                 Navigator.pop(context); // Закрываем Drawer
               },

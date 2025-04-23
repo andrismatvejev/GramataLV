@@ -216,33 +216,29 @@ class _TestViewState extends State<TestView> {
               : (rowIndex > 0 && columnIndex > 0)
               ? SizedBox(
             width: 200,
-            height: 500,
-            child:   GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // 3 столбца
-                childAspectRatio: 2,
-              ),
-              itemCount: valEndings.length, // Общее количество ячеек (3 * 9)
-              itemBuilder: (BuildContext context, int index) {
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 4,
+              runSpacing: 4,
+              children: valEndings.map((ending) {
                 return GestureDetector(
                   onTap: () {
                     setState(() {
-                      // Обновляем chouse_text в выбранной ячейке
-                      table.rows[rowIndex][columnIndex].chouse_text = valEndings[index];
+                      table.rows[rowIndex][columnIndex].chouse_text = ending;
                     });
-                    Navigator.of(context).pop(); // Закрываем диалоговое окно
+                    Navigator.of(context).pop();
                   },
                   child: Container(
-                    margin: const EdgeInsets.all(1),
+                    width: 60, // ширина одной ячейки
+                    height: 40, // высота одной ячейки
+                    alignment: Alignment.center,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Center(
-                      child: Text(valEndings[index]),
-                    ),
+                    child: Text(ending),
                   ),
                 );
-              },
+              }).toList(),
             ),
 
           )    : Column(

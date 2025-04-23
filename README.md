@@ -26,5 +26,7 @@ The "Galotnes" application is designed for those who are learning the Latvian la
 1.  **Clone the repository:**
 2. **flutter build web --release --base-href=/GramataLV/ --output docs/**
 
+## Example
+https://andrismatvejev.github.io/GramataLV/
 
 

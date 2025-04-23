@@ -284,3 +284,64 @@ List<List<String>> correctEndings3 =[
   ["jūs",   "siet it",  "siet it",        "siet it",      "siet it",  "jāties"    ,         "jāties",               "jāties"],
 ];
 
+
+List<List<String>> adviceShort4 =[
+  ["",  "🙋",   "🫵",      "👨",   "👩",      "🙋\n🙋",     "👉\n👉",      "👨\n👨",   "👩\n👩"],
+  ["Kas? 🤷",     "es",   "tu",      "viņš",   "viņa",   "mēs",   "jus",      "viņi",   "viņas"],
+  ["Kā? 🛠️",    "manis",   "tevis", "viņš",   "viņas",   "mūsu",   "jūsu",      "viņu",   "viņu"],
+  ["kam? 🧭➡️👤", "man",   "tev",   "viņš",   "viņai",   "mums",   "jums",      "viņiem",   "viņām"],
+  ["ko? 🎯",     "mani",   "tevi",   "viņš",   "viņu",   "mūs",   "jūs",      "viņus",   "viņas"],
+  ["ko? 📍",     "manī",   "tevī",   "viņš",   "viņā",   "mūsos",   "jūsos",      "viņos",   "viņās"]
+];
+
+List<List<String>> correctEndings4 =[
+  ["",           "🙋",   "🫵",      "👨",   "👩",      "🙋\n🙋",     "👉\n👉",      "👨\n👨",   "👩\n👩"],
+  ["Kas? 🤷",     "es",   "tu",      "viņš",   "viņa",   "mēs",   "jus",      "viņi",   "viņas"],
+  ["Kā? 🛠️",    "manis",   "tevis", "viņš",   "viņas",   "mūsu",   "jūsu",      "viņu",   "viņu"],
+  ["kam? 🧭➡️👤", "man",   "tev",   "viņš",   "viņai",   "mums",   "jums",      "viņiem",   "viņām"],
+  ["ko? 🎯",     "mani",   "tevi",   "viņš",   "viņu",   "mūs",   "jūs",      "viņus",   "viņas"],
+  ["ko? 📍",     "manī",   "tevī",   "viņš",   "viņā",   "mūsos",   "jūsos",      "viņos",   "viņās"]
+];
+
+
+List<List<String>> adviceShort5 =[
+  ["",  "👨",   "👨\n👨",      "👩",   "👩\n👩",     ],
+  ["Kas? 🤷",     "mans",   "mani",      "mana",   "manas"  ],
+  ["Kā? 🛠️",    "mana",   "manu", "manas",   "manu"],
+  ["kam? 🧭➡️👤", "manam",   "maniem",   "manai",   "manām"],
+  ["ko? 🎯",     "manu",   "manus",   "manu",   "manas"],
+  ["ko? 📍",     "manā",   "manos",   "manā",   "manās"],
+
+  ["Kas? 🤷",     "tavs",   "tavi",      "tava",   "tavas"  ],
+  ["Kā? 🛠️",    "tava",   "tavu", "tavas",   "tavu"],
+  ["kam? 🧭➡️👤", "tavam",   "taviem",   "tavai",   "manām"],
+  ["ko? 🎯",     "tavu",   "tavus",   "tavu",   "tavas"],
+  ["ko? 📍",     "tavā",   "tavos",   "tavā",   "tavās"],
+
+  ["Kas? 🤷",     "savs",   "savi",      "sava",   "savas"  ],
+  ["Kā? 🛠️",    "sava",   "savu", "savas",   "savu"],
+  ["kam? 🧭➡️👤", "savam",   "saviem",   "savai",   "savām"],
+  ["ko? 🎯",     "savu",   "savus",   "savu",   "savas"],
+  ["ko? 📍",     "savā",   "savos",   "savā",   "savās"]
+];
+
+List<List<String>> correctEndings5 =[
+  ["",  "👨",   "👨\n👨",      "👩",   "👩\n👩",     ],
+  ["Kas? 🤷",     "mans",   "mani",      "mana",   "manas"  ],
+  ["Kā? 🛠️",    "mana",   "manu", "manas",   "manu"],
+  ["kam? 🧭➡️👤", "manam",   "maniem",   "manai",   "manām"],
+  ["ko? 🎯",     "manu",   "manus",   "manu",   "manas"],
+  ["ko? 📍",     "manā",   "manos",   "manā",   "manās"],
+
+  ["Kas? 🤷",     "tavs",   "tavi",      "tava",   "tavas"  ],
+  ["Kā? 🛠️",    "tava",   "tavu", "tavas",   "tavu"],
+  ["kam? 🧭➡️👤", "tavam",   "taviem",   "tavai",   "manām"],
+  ["ko? 🎯",     "tavu",   "tavus",   "tavu",   "tavas"],
+  ["ko? 📍",     "tavā",   "tavos",   "tavā",   "tavās"],
+
+  ["Kas? 🤷",     "savs",   "savi",      "sava",   "savas"  ],
+  ["Kā? 🛠️",    "sava",   "savu", "savas",   "savu"],
+  ["kam? 🧭➡️👤", "savam",   "saviem",   "savai",   "savām"],
+  ["ko? 🎯",     "savu",   "savus",   "savu",   "savas"],
+  ["ko? 📍",     "savā",   "savos",   "savā",   "savās"]
+];

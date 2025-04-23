@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:galotne_f/morphology/database.dart'; // <-- подключаем базу
 
 class TezaursView extends StatefulWidget {
   const TezaursView({super.key});
@@ -9,30 +10,81 @@ class TezaursView extends StatefulWidget {
 
 class _TezaursViewState extends State<TezaursView> {
   final TextEditingController _controller = TextEditingController();
-  final List<String> _allWords = []; // Здесь будет список всех слов из файлов.
-  List<String> _suggestions = [];
+  late AppDatabase database; // подключение к базе
+  List<String> _allWords = [];
+  List<String> _filteredWords = [];
 
   @override
   void initState() {
     super.initState();
-    loadWords(); // загружаем слова
+    database = AppDatabase(); // создаем подключение
+    _loadWords();
   }
 
-  void loadWords() async {
-    // Здесь нужно будет загрузить слова из файла.
-    // Пока просто для примера:
-    _allWords.addAll([
-      "ābece", "ābols", "abstrakcija", "absolvents", "abonements", "akcija", "akti", "aktieris", "adrese", "airētājs"
-    ]);
-    setState(() {});
+  Future<void> _loadWords() async {
+    try {
+      final result = await database.customSelect(
+        'SELECT Pamatforma FROM lexemes WHERE Pamatforma IS NOT NULL',
+        readsFrom: {database.lexemes},
+      ).get();
+
+      final pamatformas = <String>[];
+
+      for (final row in result) {
+        final word = row.data['Pamatforma'] as String?;
+        if (word != null && word.isNotEmpty) {
+          pamatformas.add(word.toLowerCase());
+        }
+      }
+
+      print('🧩 Загружено слов: ${pamatformas.length}');
+      pamatformas.take(10).forEach((w) => print('👉 $w'));
+
+      setState(() {
+        _allWords = pamatformas..sort();
+      });
+
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('Результат загрузки'),
+            content: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Всего слов: ${_allWords.length}'),
+                  const SizedBox(height: 10),
+                  ..._allWords.take(10).map((e) => Text(e)),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+      });
+    } catch (e, stack) {
+      print('❗ Ошибка при загрузке базы: $e');
+      print(stack);
+    }
   }
 
-  void _onTextChanged(String input) {
+
+
+  void _updateSuggestions(String query) {
+    final input = query.toLowerCase();
+    final matches = _allWords
+        .where((word) => word.startsWith(input))
+        .take(10)
+        .toList();
+    print('🔍 Найдено совпадений: ${matches.length} для "$input"');
     setState(() {
-      _suggestions = _allWords
-          .where((word) => word.startsWith(input.toLowerCase()))
-          .take(10)
-          .toList();
+      _filteredWords = matches;
     });
   }
 
@@ -42,22 +94,23 @@ class _TezaursViewState extends State<TezaursView> {
       children: [
         TextField(
           controller: _controller,
-          onChanged: _onTextChanged,
           decoration: const InputDecoration(
-            labelText: 'Ievadiet vārdu',
-            border: OutlineInputBorder(),
+            labelText: 'Ievadiet vārdu...',
           ),
+          onChanged: (value) {
+            print('⌨️ Введено: $value');
+            _updateSuggestions(value);
+          },
         ),
-        const SizedBox(height: 16),
         Expanded(
           child: ListView.builder(
-            itemCount: _suggestions.length,
+            itemCount: _filteredWords.length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text(_suggestions[index]),
+                title: Text(_filteredWords[index]),
                 onTap: () {
-                  // Можно сделать что-то при выборе слова
-                  print('Selected: ${_suggestions[index]}');
+                  _controller.text = _filteredWords[index];
+                  _updateSuggestions(_filteredWords[index]);
                 },
               );
             },
