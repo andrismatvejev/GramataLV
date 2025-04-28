@@ -215,7 +215,7 @@ class _TestViewState extends State<TestView> {
           )
               : (rowIndex > 0 && columnIndex > 0)
               ? SizedBox(
-            width: 200,
+            width: 250,
             child: Wrap(
               alignment: WrapAlignment.center,
               spacing: 4,
@@ -229,13 +229,17 @@ class _TestViewState extends State<TestView> {
                     Navigator.of(context).pop();
                   },
                   child: Container(
-                    width: 60, // ширина одной ячейки
-                    height: 40, // высота одной ячейки
+                    width: 80, // ширина одной ячейки
+                    height: 45, // высота одной ячейки
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
+
                     ),
-                    child: Text(ending),
+                    child: Text(style:TextStyle(fontSize: calculateFontSize(ending)) ,   ending),
+
+
+
                   ),
                 );
               }).toList(),

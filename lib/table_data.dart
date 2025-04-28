@@ -183,7 +183,7 @@ return 100.0; // Длинный текст
 
  double calculateFontSize(String text) {
 // Возвращаем размер шрифта в зависимости от длины
-if (text.length < 5) {
+if (text.length < 4) {
 return 20.0; // Короткий текст
 } else if (text.length < 10) {
 return 12.0; // Средний текст

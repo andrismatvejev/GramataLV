@@ -286,62 +286,139 @@ List<List<String>> correctEndings3 =[
 
 
 List<List<String>> adviceShort4 =[
-  ["",  "🙋",   "🫵",      "👨",   "👩",      "🙋\n🙋",     "👉\n👉",      "👨\n👨",   "👩\n👩"],
+  ["",           "🙋",   "🫵",      "👨",   "👩",      "🙋\n🙋",     "👉\n👉",      "👨\n👨",   "👩\n👩"],
   ["Kas? 🤷",     "es",   "tu",      "viņš",   "viņa",   "mēs",   "jus",      "viņi",   "viņas"],
-  ["Kā? 🛠️",    "manis",   "tevis", "viņš",   "viņas",   "mūsu",   "jūsu",      "viņu",   "viņu"],
-  ["kam? 🧭➡️👤", "man",   "tev",   "viņš",   "viņai",   "mums",   "jums",      "viņiem",   "viņām"],
-  ["ko? 🎯",     "mani",   "tevi",   "viņš",   "viņu",   "mūs",   "jūs",      "viņus",   "viņas"],
-  ["ko? 📍",     "manī",   "tevī",   "viņš",   "viņā",   "mūsos",   "jūsos",      "viņos",   "viņās"]
+  ["Kā? 🛠️",    "manis",   "tevis", "viņa",   "viņas",   "mūsu",   "jūsu",      "viņu",   "viņu"],
+  ["Kam? 🧭➡️👤", "man",   "tev",   "viņam",   "viņai",   "mums",   "jums",      "viņiem",   "viņām"],
+  ["Ko? 🎯",     "mani",   "tevi",   "viņu",   "viņu",   "mūs",   "jūs",      "viņus",   "viņas"],
+  ["Kur? 📍",     "manī",   "tevī",   "viņā",   "viņā",   "mūsos",   "jūsos",      "viņos",   "viņās"]
 ];
 
 List<List<String>> correctEndings4 =[
   ["",           "🙋",   "🫵",      "👨",   "👩",      "🙋\n🙋",     "👉\n👉",      "👨\n👨",   "👩\n👩"],
   ["Kas? 🤷",     "es",   "tu",      "viņš",   "viņa",   "mēs",   "jus",      "viņi",   "viņas"],
-  ["Kā? 🛠️",    "manis",   "tevis", "viņš",   "viņas",   "mūsu",   "jūsu",      "viņu",   "viņu"],
-  ["kam? 🧭➡️👤", "man",   "tev",   "viņš",   "viņai",   "mums",   "jums",      "viņiem",   "viņām"],
-  ["ko? 🎯",     "mani",   "tevi",   "viņš",   "viņu",   "mūs",   "jūs",      "viņus",   "viņas"],
-  ["ko? 📍",     "manī",   "tevī",   "viņš",   "viņā",   "mūsos",   "jūsos",      "viņos",   "viņās"]
+  ["Kā? 🛠️",    "manis",   "tevis", "viņa",   "viņas",   "mūsu",   "jūsu",      "viņu",   "viņu"],
+  ["Kam? 🧭➡️👤", "man",   "tev",   "viņam",   "viņai",   "mums",   "jums",      "viņiem",   "viņām"],
+  ["Ko? 🎯",     "mani",   "tevi",   "viņu",   "viņu",   "mūs",   "jūs",      "viņus",   "viņas"],
+  ["Kur? 📍",     "manī",   "tevī",   "viņā",   "viņā",   "mūsos",   "jūsos",      "viņos",   "viņās"]
 ];
 
 
 List<List<String>> adviceShort5 =[
   ["",  "👨",   "👨\n👨",      "👩",   "👩\n👩",     ],
-  ["Kas? 🤷",     "mans",   "mani",      "mana",   "manas"  ],
-  ["Kā? 🛠️",    "mana",   "manu", "manas",   "manu"],
-  ["kam? 🧭➡️👤", "manam",   "maniem",   "manai",   "manām"],
-  ["ko? 🎯",     "manu",   "manus",   "manu",   "manas"],
-  ["ko? 📍",     "manā",   "manos",   "manā",   "manās"],
+  ["Kas? 🤷",     "mans\ntavs\nsavs",   "mani\ntavi\nsavi",      "mana\ntava\nsava",   "manas\ntavas\nsavas"  ],
+  ["Kā? 🛠️",    "mana\ntava\nsava",   "manu\ntavu\nsavu", "manas\ntavas\nsavas",   "manu\ntavu\nsavu"],
+  ["Kam? 🧭➡️👤", "manam\ntavam\nsavam",   "maniem\ntaviem\nsaviem",   "manai\ntavai\nsavai",   "manām\nmanām\nsavām"],
+  ["Ko? 🎯",     "manu\ntavu\nsavu",   "manus\ntavus\nsavus",   "manu\ntavu\nsavu",   "manas\ntavas\nsavas"],
+  ["Kur? 📍",     "manā\ntavā\nsavā",   "manos\ntavos\nsavos",   "manā\ntavā\nsavā",   "manās\ntavās\nsavās"],
 
-  ["Kas? 🤷",     "tavs",   "tavi",      "tava",   "tavas"  ],
-  ["Kā? 🛠️",    "tava",   "tavu", "tavas",   "tavu"],
-  ["kam? 🧭➡️👤", "tavam",   "taviem",   "tavai",   "manām"],
-  ["ko? 🎯",     "tavu",   "tavus",   "tavu",   "tavas"],
-  ["ko? 📍",     "tavā",   "tavos",   "tavā",   "tavās"],
+  ["Kas? 🤷",     "kads\nkurs",   "kadi\nkuri",      "kada\nkura",   "kadas\nkuras"  ],
+  ["Kā? 🛠️",    "kada\nkura",   "kadu\nkuru", "kadas\nkuras",   "kadu\nkuru"],
+  ["Kam? 🧭➡️👤", "kadam\nkuram",   "kadiem\nkuriem",   "kadai\nkurai",   "kadām\nkurām"],
+  ["Ko? 🎯",     "kadu\nkuru",   "kadus\nkurus",   "kadu\nkuru",   "kadas\nkuras"],
+  ["Kur? 📍",     "kadā\nkurā",   "kados\nkuros",   "kadā\nkurā",   "kadās\nkurās"],
 
-  ["Kas? 🤷",     "savs",   "savi",      "sava",   "savas"  ],
-  ["Kā? 🛠️",    "sava",   "savu", "savas",   "savu"],
-  ["kam? 🧭➡️👤", "savam",   "saviem",   "savai",   "savām"],
-  ["ko? 🎯",     "savu",   "savus",   "savu",   "savas"],
-  ["ko? 📍",     "savā",   "savos",   "savā",   "savās"]
+  ["Kas? 🤷",     "tas\nšis",   "tie\nšie",      "tā\nšī",   "tās\nšīs"  ],
+  ["Kā? 🛠️",    "tā\nšī,šā",   "to\nšo", "tās\nšīs,šās",   "to\nšo"],
+  ["Kam? 🧭➡️👤", "tam\nšim",   "tiem\nšiem",   "tai\nšai",   "tām\nšīm"],
+  ["Ko? 🎯",     "to\nšo",   "tos\nšos",   "to\nšo",   "tās\nšīs"],
+  ["Kur? 📍",     "tajā\nšiņi,šajā,šai",   "tajos\nšinīs,šajos,šais",   "tajā\nšiņī,šajā,šai",   "tajās\nšinīs,šajās,šais"]
+
 ];
 
 List<List<String>> correctEndings5 =[
   ["",  "👨",   "👨\n👨",      "👩",   "👩\n👩",     ],
-  ["Kas? 🤷",     "mans",   "mani",      "mana",   "manas"  ],
-  ["Kā? 🛠️",    "mana",   "manu", "manas",   "manu"],
-  ["kam? 🧭➡️👤", "manam",   "maniem",   "manai",   "manām"],
-  ["ko? 🎯",     "manu",   "manus",   "manu",   "manas"],
-  ["ko? 📍",     "manā",   "manos",   "manā",   "manās"],
+  ["Kas? 🤷",     "mans\ntavs\nsavs",   "mani\ntavi\nsavi",      "mana\ntava\nsava",   "manas\ntavas\nsavas"  ],
+  ["Kā? 🛠️",    "mana\ntava\nsava",   "manu\ntavu\nsavu", "manas\ntavas\nsavas",   "manu\ntavu\nsavu"],
+  ["Kam? 🧭➡️👤", "manam\ntavam\nsavam",   "maniem\ntaviem\nsaviem",   "manai\ntavai\nsavai",   "manām\nmanām\nsavām"],
+  ["Ko? 🎯",     "manu\ntavu\nsavu",   "manus\ntavus\nsavus",   "manu\ntavu\nsavu",   "manas\ntavas\nsavas"],
+  ["Kur? 📍",     "manā\ntavā\nsavā",   "manos\ntavos\nsavos",   "manā\ntavā\nsavā",   "manās\ntavās\nsavās"],
 
-  ["Kas? 🤷",     "tavs",   "tavi",      "tava",   "tavas"  ],
-  ["Kā? 🛠️",    "tava",   "tavu", "tavas",   "tavu"],
-  ["kam? 🧭➡️👤", "tavam",   "taviem",   "tavai",   "manām"],
-  ["ko? 🎯",     "tavu",   "tavus",   "tavu",   "tavas"],
-  ["ko? 📍",     "tavā",   "tavos",   "tavā",   "tavās"],
+  ["Kas? 🤷",     "kads\nkurs",   "kadi\nkuri",      "kada\nkura",   "kadas\nkuras"  ],
+  ["Kā? 🛠️",    "kada\nkura",   "kadu\nkuru", "kadas\nkuras",   "kadu\nkuru"],
+  ["Kam? 🧭➡️👤", "kadam\nkuram",   "kadiem\nkuriem",   "kadai\nkurai",   "kadām\nkurām"],
+  ["Ko? 🎯",     "kadu\nkuru",   "kadus\nkurus",   "kadu\nkuru",   "kadas\nkuras"],
+  ["Kur? 📍",     "kadā\nkurā",   "kados\nkuros",   "kadā\nkurā",   "kadās\nkurās"],
 
-  ["Kas? 🤷",     "savs",   "savi",      "sava",   "savas"  ],
-  ["Kā? 🛠️",    "sava",   "savu", "savas",   "savu"],
-  ["kam? 🧭➡️👤", "savam",   "saviem",   "savai",   "savām"],
-  ["ko? 🎯",     "savu",   "savus",   "savu",   "savas"],
-  ["ko? 📍",     "savā",   "savos",   "savā",   "savās"]
+  ["Kas? 🤷",     "tas\nšis",   "tie\nšie",      "tā\nšī",   "tās\nšīs"  ],
+  ["Kā? 🛠️",    "tā\nšī,šā",   "to\nšo", "tās\nšīs,šās",   "to\nšo"],
+  ["Kam? 🧭➡️👤", "tam\nšim",   "tiem\nšiem",   "tai\nšai",   "tām\nšīm"],
+  ["Ko? 🎯",     "to\nšo",   "tos\nšos",   "to\nšo",   "tās\nšīs"],
+  ["Kur? 📍",     "tajā\nšiņi,šajā,šai",   "tajos\nšinīs,šajos,šais",   "tajā\nšiņī,šajā,šai",   "tajās\nšinīs,šajās,šais"]
+
+];
+
+
+List<List<String>> correctEndings6 =[
+  ["",           "👨",  "👨\n👨"],
+  ["aiz",     "G",   "D"],
+  ["pie",     "G",   "D"],
+  ["virs",     "G",   "D"],
+  ["zem",     "G",   "D"],
+  ["pirms",     "G",   "D"],
+
+  ["pēc",     "G",   "D"],
+  ["kopš",     "G",   "D"],
+  ["no",     "G",   "D"],
+  ["ārpus",     "G",   "D"],
+  ["uz",     "G",   "D"],
+  ["bez",     "G",   "D"],
+  ["līdz",     "D",   "D"],
+  ["ap",     "A",   "D"],
+
+  ["pa",     "A",   "D"],
+  ["gar",     "A",   "D"],
+  ["pār",     "A",   "D"],
+  ["pret",     "A",   "D"],
+  ["uz",     "A",   "D"],
+  ["starp",     "A",   "D"],
+  ["ar",     "A",   "D"],
+  ["par",     "A",   "D"]
+
+];
+
+List<List<String>> adviceShort6 =[
+  ["",           "👨",  "👨\n👨"],
+  ["aiz",     "galda,skapja,tirgus\nmājas,tulpes,pils",   "galdiem,skapjiem,tirgiem\nmājām,tulpēm,pilīm"],
+  ["pie",     "galda,skapja,tirgus\nmājas,tulpes,pils",   "galdiem,skapjiem,tirgiem\nmājām,tulpēm,pilīm"],
+  ["virs",    "galda,skapja,tirgus\nmājas,tulpes,pils",   "galdiem,skapjiem,tirgiem\nmājām,tulpēm,pilīm"],
+  ["zem",     "galda,skapja,tirgus\nmājas,tulpes,pils",   "galdiem,skapjiem,tirgiem\nmājām,tulpēm,pilīm"],
+  ["pirms",     "gada,meneāša,lietus\ndienas,izrādes,nakts",   "gadiem,meneāšiem,lietiem\ndienām,izrādēm,naktīm"],
+
+  ["pēc",      "gada,meneāša,lietus\ndienas,izrādes,nakts",   "gadiem,meneāšiem,lietiem\ndienām,izrādēm,naktīm"],
+  ["kopš",     "marta,pavasara,bērnības",   "gadiem,ziemassvētkiem,lieldienām"],
+  ["no",     "veikala,teātra,tirgus\nlekcijas,spēles,pils",   "veikaliem,teātriem,tirgiem\nlekcijām,spēlēm,pilīm"],
+  ["ārpus",     "veikala,teātra,tirgus\nlekcijas,spēles,pils",   "veikaliem,teātriem,tirgiem\nlekcijām,spēlēm,pilīm"],
+  ["uz",     "galda,skapja,ledus\nielas,upes,pils",   "galdiem,skapjiem\nieljām,upēm,pilīm"],
+  ["bez",     "darda\nmaksas",   "nokrišņiem\nbrivdienām"],
+  ["līdz",     "mežam,teātrim,tirgum\npilsētai,upei,pilij",   "mežiem,teātriem,tirgiem\npilsētām,upēm,pilīm"],
+  ["ap",     "parku,teātri,tirgu\nielu,upi,valsti",   "parkiem,teātriem,tirgiem\nielām,upēm,valstīm"],
+
+  ["pa",     "parku,teātri,tirgu\nielu,upi,valsti",   "parkiem,teātriem,tirgiem\nielām,upēm,valstīm"],
+  ["gar",     "parku,teātri,tirgu\nielu,upi,valsti",   "parkiem,teātriem,tirgiem\nielām,upēm,valstīm"],
+  ["pār",     "parku,teātri,tirgu\nielu,upi,valsti",   "parkiem,teātriem,tirgiem\nielām,upēm,valstīm"],
+  ["pret",     "parku,teātri,tirgu\nielu,upi,valsti",   "parkiem,teātriem,tirgiem\nielām,upēm,valstīm"],
+  ["uz",     "parku,teātri,tirgu\nielu,upi,valsti",   "parkiem,teātriem,tirgiem\nielām,upēm,valstīm"],
+  ["starp",     "parku,tirgu\nielu,upi",   "kokiem,braļiem\nielām,upēm"],
+  ["ar",      "draugu,brali\nmāsu,draudzeni",   "draugiem,braļiem\nmāsām,draudzenēm"],
+  ["par",    "draugu,brali\nmāsu,draudzeni",   "draugiem,braļiem\nmāsām,draudzenēm"]
+
+];
+
+List<List<String>> correctEndings7 =[
+  ["",           "👨",   "👨\n👨",      "👩",   "👩\n👩","👨\n🥇","👩\n🥇"],
+  ["Kas? 🤷",     "viens",     "divi",      "viena",   "divas",      "pirmais",   "pirmā"],
+  ["Kā? 🛠️",    "viena",      "divu",     "vienas",   "divu",      "pirmā",   "pirmās"],
+  ["kam? 🧭➡️👤", "vienam",   "diviem",   "vienai",   "divām",      "pirmajam",   "pirmjāi"],
+  ["ko? 🎯",     "vienu",      "divus",   "vienu",   "divas",      "pirmo",   "pirmo"],
+  ["kur? 📍",     "vienā",      "divos",   "vienā",   "divās",      "pirmajā",   "pirmajā"]
+];
+
+List<List<String>> adviceShort7 =[
+  ["",           "👨",   "👨\n👨",      "👩",   "👩\n👩","👨\n🥇","👩\n🥇"],
+  ["Kas? 🤷",     "viens ⌚ cik",     "divi ⌚ cik",      "viena ⌚ minūte cik",   "divas ⌚ minūtes cik",      "pirmais",   "pirmā"],
+  ["Kā? 🛠️",    "viena",      "divu",     "vienas",   "divu",      "pirmā",   "pirmās"],
+  ["kam? 🧭➡️👤", "vienam",   "diviem",   "vienai",   "divām",      "pirmajam",   "pirmjāi"],
+  ["ko? 🎯",     "vienu",      "divus",   "vienu",   "divas",      "pirmo",   "pirmo"],
+  ["kur? 📍",     "vienā",      "divos ⌚ cikos?",   "vienā ⌚ minūtē cikos?",   "divās ⌚ minūtēs cikos?",      "pirmajā",   "pirmajā"]
 ];

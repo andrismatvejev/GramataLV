@@ -109,6 +109,20 @@ class _MyHomePageState extends State<MyHomePage> {
           _adviceShort = adviceShort5;
           _selectedTitle = 'Vietniekvārds 2';
           break;
+        case 6:
+          _tableRowHeight = 40;
+          _tableQuarterTurns = 0;
+          _correctEndings = correctEndings6;
+          _adviceShort = adviceShort6;
+          _selectedTitle = 'Prievārds';
+          break;
+        case 7:
+          _tableRowHeight = 40;
+          _tableQuarterTurns = 0;
+          _correctEndings = correctEndings7;
+          _adviceShort = adviceShort7;
+          _selectedTitle = 'Skaitļa';
+          break;
         case 3:
           _selectedTitle = 'Tezaurs';
           _NeStandart=2;
@@ -189,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.yellow,
+                color: Colors.orangeAccent,
               ),
               child: Text(
                 'Galotnes',
@@ -217,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.arrow_left),
+              leading: const Icon(Icons.add_circle),
               title: const Text('Darbības'),
               onTap: () {
                 _onItemTapped(2);
@@ -226,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.arrow_left),
+              leading: const Icon(Icons.account_box),
               title: const Text('Vietniekvārds'),
               onTap: () {
                 _onItemTapped(4);
@@ -235,10 +249,28 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.arrow_left),
+              leading: const Icon(Icons.account_box_outlined),
               title: const Text('Vietniekvārds 2'),
               onTap: () {
                 _onItemTapped(5);
+                // ... логика для перехода на страницу Darb pag
+                Navigator.pop(context); // Закрываем Drawer
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.account_tree),
+              title: const Text('Prievārds'),
+              onTap: () {
+                _onItemTapped(6);
+                // ... логика для перехода на страницу Darb pag
+                Navigator.pop(context); // Закрываем Drawer
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.add_circle_outline),
+              title: const Text('Skaitļa'),
+              onTap: () {
+                _onItemTapped(7);
                 // ... логика для перехода на страницу Darb pag
                 Navigator.pop(context); // Закрываем Drawer
               },
